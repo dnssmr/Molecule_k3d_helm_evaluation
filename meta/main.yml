@@ -1,7 +1,7 @@
 galaxy_info:
-  author: neatdump
-  namespace: neatdump
-  description: your role description
+  author: Denise Siemer
+  namespace: Denise Siemer
+  description: The sole purpose of this role is to use it to test the k3d intregration of molecule. For this, the role installes the kubernetes dashboard via Helm
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
