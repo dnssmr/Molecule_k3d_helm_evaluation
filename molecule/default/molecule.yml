@@ -1,0 +1,21 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: k3d
+platforms:
+  - name: dashboard-test
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      remote_tmp: /tmp
+  env:
+    ANSIBLE_VERBOSITY: 1
+    K8S_AUTH_KUBECONFIG: ~/.k3d/kubeconfig-dashboard-test.yaml
+    KUBECONFIG: ~/.k3d/kubeconfig-dashboard-test.yaml
+verifier:
+  name: ansible
+lint: |   
+  ../../venv/bin/yamllint .
+  ../../venv/bin/ansible-lint

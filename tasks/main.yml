@@ -1,0 +1,15 @@
+---
+# tasks file for kubernetes-dashboard
+- name: Show kubeconfig
+  ansible.builtin.debug: 
+    var: kubeconfig
+
+- name: Deploy kubernetes-dashboard chart
+  kubernetes.core.helm:
+    kubeconfig: "{{ kubeconfig }}"
+    name: neatdump-kubernetes-dashboard
+    chart_repo_url: "https://kubernetes.github.io/dashboard/"
+    chart_ref: kubernetes-dashboard
+    release_namespace: default
+    release_state: present
+  become: true

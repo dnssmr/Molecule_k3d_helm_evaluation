@@ -1,0 +1,3 @@
+---
+# defaults file for kubernetes-dashboard
+kubeconfig: "~/.k3d/kubeconfig-dashboard-test.yaml"

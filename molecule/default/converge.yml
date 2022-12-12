@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: localhost
+  gather_facts: false
+  vars: 
+    - kubeconfig: "~/.k3d/kubeconfig-dashboard-test.yaml"
+  tasks:
+    - name: "Include kubernetes_dashboard"
+      ansible.builtin.include_role:
+        name: "kubernetes_dashboard"
